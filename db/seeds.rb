@@ -1,7 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "csv"
+
+Cast.delete_all
+World.delete_all
+
+filename = Rails.root.join("db/worlds.csv")
+
+puts filename
+
+csv_data = File.read(filename)
+planets = CSV.parse(csv_data, headers: true, encoding: "utf-8")
+
+planets.each do |m|
+  planet_name = World.find_or_create_by(name: m["name"])
+  if planet_name&.valid?
+
+
+    puts "Invalid planet #{m['name']}"
+  else
+    puts "Invalid planet #{m['planet_name']} for planet #{m['name']}."
+  end
+end
+
+puts "Created #{World.count} planets"

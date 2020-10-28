@@ -1,0 +1,7 @@
+<p> Search results for : <%= params[:keywords]%></p>
+
+<ul>
+  <% @planets.each do |planet|%>
+  <li><%= planet.name %></li>
+  <% end %>
+</ul>

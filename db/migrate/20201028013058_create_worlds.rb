@@ -1,6 +1,7 @@
 class CreateWorlds < ActiveRecord::Migration[6.0]
   def change
     create_table :worlds do |t|
+      t.integer :id
       t.string :name
       t.integer :rotation_period
       t.integer :orbital_period
