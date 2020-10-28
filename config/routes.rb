@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
   resources :planets, only: [:index, :show] do
     collection do
       get "search"
