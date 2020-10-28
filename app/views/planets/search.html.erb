@@ -1,7 +1,9 @@
+<div class="ml-5">
 <p> Search results for : <%= params[:keywords]%></p>
 
-<ul>
+<ol>
   <% @planets.each do |planet|%>
-  <li><%= planet.planet_name %></li>
+  <li class="subtitle is-3"><%=  link_to planet.planet_name, planet %></li>
   <% end %>
-</ul>
+</ol>
+</div>
