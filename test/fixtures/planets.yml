@@ -1,21 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  planet_name: MyString
   rotation_period: 1
   orbital_period: 1
   diameter: 1
   gravity: MyString
-  eye_color: MyString
   surface_water: 1
   population: 1
+  home_world: one
 
 two:
-  name: MyString
+  planet_name: MyString
   rotation_period: 1
   orbital_period: 1
   diameter: 1
   gravity: MyString
-  eye_color: MyString
   surface_water: 1
   population: 1
+  home_world: two

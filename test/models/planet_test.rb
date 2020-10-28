@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WorldTest < ActiveSupport::TestCase
+class PlanetTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
