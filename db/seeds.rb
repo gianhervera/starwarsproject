@@ -2,6 +2,7 @@ require "csv"
 
 Cast.delete_all
 World.delete_all
+Page.delete_all
 
 filename = Rails.root.join("db/worlds.csv")
 

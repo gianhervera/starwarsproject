@@ -1,6 +1,9 @@
 class PlanetsController < ApplicationController
+  PLANETS_PER_PAGE = 10
+
   def index
-    @planets = World.all
+    @page = params.fetch(:page, 0).to_i
+    @planets = World.offset(@page * PLANETS_PER_PAGE).limit(PLANETS_PER_PAGE)
   end
 
   def show

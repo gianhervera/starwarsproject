@@ -4,3 +4,10 @@
   <li><%= planet.name%></li>
 <% end %>
 </ul>
+
+<div>
+<%= link_to "Previous Page", planets_path(page: @page - 1)%>
+|
+<%= link_to "Next Page", planets_path(page: @page + 1)%>
+
+</div>
