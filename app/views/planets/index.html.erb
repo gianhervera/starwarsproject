@@ -1,9 +1,29 @@
- <p class="subtitle is-3">Planets</p>
-<ul>
-  <%@planets.each do |planet|%>
-  <li><%= planet.name%></li>
-<% end %>
-</ul>
+ <p class="title is-3">Planets</p>
+
+<div class="content">
+<table class="table">
+<thead>
+<tr>
+  <th>Planet</th>
+  <th>Diameter</th>
+  <th>Population</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+  <td><%@planets.each do |planet|%>
+  <p><%= link_to planet.planet_name, planet%></p>
+    <% end %></td>
+    <td><%@planets.each do |planet|%>
+  <p><%= planet.diameter%></p>
+    <% end %></td>
+    <td><%@planets.each do |planet|%>
+  <p><%= planet.population%></p>
+    <% end %></td>
+  </tr>
+</tbody>
+</table>
+
 
 <div>
 <%= link_to "Previous Page", planets_path(page: @page - 1)%>

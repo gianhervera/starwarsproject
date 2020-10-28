@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     end
   end
   resources :characters, only: %i[index show]
-  root 'home#index'
+  root 'planets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

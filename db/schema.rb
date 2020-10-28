@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_144613) do
+ActiveRecord::Schema.define(version: 2020_10_28_145302) do
 
   create_table "home_worlds", force: :cascade do |t|
     t.string "name"
@@ -26,4 +26,19 @@ ActiveRecord::Schema.define(version: 2020_10_28_144613) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "planets", force: :cascade do |t|
+    t.string "planet_name"
+    t.integer "rotation_period"
+    t.integer "orbital_period"
+    t.integer "diameter"
+    t.string "gravity"
+    t.integer "surface_water"
+    t.integer "population"
+    t.integer "home_world_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["home_world_id"], name: "index_planets_on_home_world_id"
+  end
+
+  add_foreign_key "planets", "home_worlds"
 end
