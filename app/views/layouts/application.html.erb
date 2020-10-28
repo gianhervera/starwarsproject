@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Star Wars</title>
+    <title><%=yield(:html_title) if content_for?(:html_title)%>Star Wars</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,7 +16,8 @@
    <section class="section">
     <div class="container">
     <p class="title is-1 is-spaced">STAR WARS</p>
-
+    <%= link_to "Home", root_path%>
+    <%= link_to "About Us", about_index_path%>
 <%= form_with(url: search_planets_path, method: :get, local: :true) do %>
   <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search a planet") %>
   <%= submit_tag("Search", class: "button is-dark") %>
