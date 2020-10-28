@@ -1,2 +1,52 @@
-<h1>Characters#index</h1>
-<p>Find me in app/views/characters/index.html.erb</p>
+ <p class="title is-3">Star Wars Characters</p>
+  <div class="content">
+<table class="table">
+<thead>
+<tr>
+  <th>Name</th>
+  <th>Height</th>
+  <th>Mass</th>
+  <th>Hair Color</th>
+  <th>Skin Color</th>
+  <th>Eye Color</th>
+  <th>Birth Year</th>
+  <th>Gender</th>
+  <th>Home World</th>
+  <th>Species</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+  <td><%@casts.each do |cast|%>
+  <p><%= cast.name%></p>
+    <% end %></td>
+     <td><%@casts.each do |cast|%>
+  <p><%= cast.height%></p>
+    <% end %></td>
+     <td><%@casts.each do |cast|%>
+  <p><%= cast.mass%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.hair_color%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.skin_color%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.eye_color%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.birth_year%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.gender%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.homeworld%></p>
+    <% end %></td>
+    <td><%@casts.each do |cast|%>
+  <p><%= cast.species%></p>
+    <% end %></td>
+  </tr>
+</tbody>
+</table>

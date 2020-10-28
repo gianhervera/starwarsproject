@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_145302) do
+ActiveRecord::Schema.define(version: 2020_10_28_173008) do
+
+  create_table "casts", force: :cascade do |t|
+    t.string "name"
+    t.integer "height"
+    t.integer "mass"
+    t.string "hair_color"
+    t.string "skin_color"
+    t.string "eye_color"
+    t.string "birth_year"
+    t.string "gender"
+    t.string "homeworld"
+    t.string "species"
+    t.integer "characterinfo_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["characterinfo_id"], name: "index_casts_on_characterinfo_id"
+  end
+
+  create_table "characterinfos", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "height"
+    t.integer "mass"
+    t.string "hair_color"
+    t.string "skin_color"
+    t.string "eye_color"
+    t.string "birth_year"
+    t.string "gender"
+    t.string "homeworld"
+    t.string "species"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "home_worlds", force: :cascade do |t|
     t.string "name"
@@ -40,5 +78,6 @@ ActiveRecord::Schema.define(version: 2020_10_28_145302) do
     t.index ["home_world_id"], name: "index_planets_on_home_world_id"
   end
 
+  add_foreign_key "casts", "characterinfos"
   add_foreign_key "planets", "home_worlds"
 end

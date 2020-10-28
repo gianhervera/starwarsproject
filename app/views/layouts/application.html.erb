@@ -18,6 +18,7 @@
     <p class="title is-1 is-spaced">STAR WARS</p>
     <%= link_to "Home", root_path%>
     <%= link_to "About Us", about_index_path%>
+    <%= link_to "Characters", characters_path%>
 <%= form_with(url: search_planets_path, method: :get, local: :true) do %>
   <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search a planet") %>
   <%= submit_tag("Search", class: "button is-dark") %>

@@ -33,3 +33,36 @@ end
 
 puts "Created #{HomeWorld.count} planets"
 puts "Created #{Planet.count} planets"
+
+filenames = Rails.root.join("db/characters.csv")
+
+puts "Loading files from CSV file: #{filenames}"
+
+csv_data = File.read(filenames)
+
+characters = CSV.parse(csv_data, headers: true, encoding: "utf-8")
+
+characters.each do |m|
+  characterinfo = Characterinfo.find_or_create_by(name: m["name"])
+
+  if characterinfo&.valid?
+    cast = characterinfo.cast.create(
+    name: m["name"],
+    height: m["height"],
+    mass: m["mass"],
+    hair_color: m["hair_color"],
+    skin_color: m["skin_color"],
+    eye_color: m["eye_color"],
+    birth_year: m["birth_year"],
+    gender: m["gender"],
+    homeworld: m["homeworld"],
+    species: m["species"],
+    )
+    puts "Invalid character #{m["name"]}" unless cast.valid?
+  else
+    puts "Invalid character name #{m["name"]} for character #{m['name']}. "
+  end
+end
+
+
+puts "Created #{Characterinfo.count} characters"
