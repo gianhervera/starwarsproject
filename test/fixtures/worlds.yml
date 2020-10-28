@@ -5,9 +5,8 @@ one:
   rotation_period: 1
   orbital_period: 1
   diameter: 1
-  climate: MyString
   gravity: MyString
-  terrain: MyString
+  eye_color: MyString
   surface_water: 1
   population: 1
 
@@ -16,8 +15,7 @@ two:
   rotation_period: 1
   orbital_period: 1
   diameter: 1
-  climate: MyString
   gravity: MyString
-  terrain: MyString
+  eye_color: MyString
   surface_water: 1
   population: 1
